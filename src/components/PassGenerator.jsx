@@ -28,12 +28,15 @@ export default function PassGenerator() {
         }
     }
 
+    let copyPass = () => {
+        navigator.clipboard.writeText(finalpass)
+    }
     return (
         <>
             <div className='passwordBox'>
                 <h2>Password Generator</h2>
                 <div className='passwordBoxIn'>
-                    <input type='text' value={finalpass} readOnly /> <button>Copy</button>
+                    <input type='text' value={finalpass} readOnly /> <button onClick={copyPass}>Copy</button>
                 </div>
                 <div className='passLength'>
                     <label>Password Length</label>
